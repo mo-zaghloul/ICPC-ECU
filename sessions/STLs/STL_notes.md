@@ -5,7 +5,7 @@
 | Container | Size    | Random Access | Search | Insert | Erase |
 |-----------|---------|---------------|--------|--------|-------|
 | Array     | Fixed   | Yes           | O(n)   | O(n)   | O(n)  |
-| Vector    | Dynamic | Yes           | O(n)   | O(n)   | O(n)  |
+| Vector    | Dynamic | Yes           | O(n)   | O(1) (back)   | O(1) (back)  |
 | Deque     | Dynamic | Yes           | O(n)   | O(1) (back/front) | O(1) (back/front) |
 | Stack     | Dynamic | No            | No     | O(1) (push) | O(1) (pop) |
 | Queue     | Dynamic | No            | No     | O(1) (back only) | O(1) (front only) |
@@ -21,9 +21,11 @@
 Illustration:  
 
 ```
-begin()                               end()
-  ↓                                    ↓
-[  ][  ][  ][  ][  ]
+   begin()                      end()
+     ↓                           ↓
+    [  ][  ][  ][  ][  ][  ][  ]
+  ↑                          ↑
+rend()                    rbegin()
 ```
 
 ---
