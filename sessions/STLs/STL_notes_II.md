@@ -87,3 +87,32 @@ for (auto &x : mm)
 ```
 
 ---
+
+## Priority Queue
+- A container adapter that provides constant time access to the **largest element** (by default).
+- Implemented using a **max-heap** (by default).
+- By default, `priority_queue` is a **max-heap**. To make it a **min-heap**, use `greater<T>`.
+
+**Common Operations:**
+- `push(x)` → O(log n)
+- `pop()` → O(log n)
+- `top()` → O(1)
+- `empty()`, `size()`
+
+**Example (Max Heap):**
+```cpp
+priority_queue<int> pq;
+pq.push(10);
+pq.push(5);
+pq.push(20);
+cout << pq.top(); // 20
+```
+
+**Example (Min Heap):**
+```cpp
+priority_queue<int, vector<int>, greater<int>> pq;
+pq.push(10);
+pq.push(5);
+pq.push(20);
+cout << pq.top(); // 5
+```
